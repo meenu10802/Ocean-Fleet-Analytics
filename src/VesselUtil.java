@@ -4,7 +4,7 @@ import java.util.List;
 /*
  * VesselUtil class
  * ----------------
- * UC2: Stores vessel records using a List.
+ * UC3: Retrieve vessel details using vesselId.
  */
 public class VesselUtil {
 
@@ -14,7 +14,14 @@ public class VesselUtil {
         vesselList.add(vessel);
     }
 
-    public List<Vessel> getAllVessels() {
-        return vesselList;
+    public Vessel getVesselById(String vesselId) {
+
+        // Linear search
+        for (Vessel vessel : vesselList) {
+            if (vessel.getVesselId().equals(vesselId)) {
+                return vessel;
+            }
+        }
+        return null;
     }
 }
