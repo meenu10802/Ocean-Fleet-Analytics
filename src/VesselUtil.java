@@ -4,7 +4,7 @@ import java.util.List;
 /*
  * VesselUtil class
  * ----------------
- * UC4: Identify vessels with highest average speed.
+ * UC5: Provides storage and retrieval for UI.
  */
 public class VesselUtil {
 
@@ -14,25 +14,7 @@ public class VesselUtil {
         vesselList.add(vessel);
     }
 
-    public List<Vessel> getHighPerformanceVessels() {
-
-        List<Vessel> result = new ArrayList<>();
-        double maxSpeed = 0;
-
-        // Find maximum speed
-        for (Vessel vessel : vesselList) {
-            if (vessel.getAverageSpeed() > maxSpeed) {
-                maxSpeed = vessel.getAverageSpeed();
-            }
-        }
-
-        // Collect vessels with max speed
-        for (Vessel vessel : vesselList) {
-            if (vessel.getAverageSpeed() == maxSpeed) {
-                result.add(vessel);
-            }
-        }
-
-        return result;
+    public List<Vessel> getAllVessels() {
+        return vesselList;
     }
 }
